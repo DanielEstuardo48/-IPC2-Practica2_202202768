@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de inicio</title>
+    <style>
+        /* Estilo para centrar el h1 */
+        h1 {
+            text-align: center;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+
+        /* Estilo para centrar la tabla */
+        .tabla-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Estilo para la tabla */
+        table {
+            width: 40%;
+            border-collapse: collapse;
+        }
+
+        /* Estilo para las celdas de encabezado */
+        th {
+            background-color: #00bfff;
+            color: black;
+            font-family: 'Comic Sans MS', sans-serif;
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Estilo para las celdas de datos */
+        td {
+            border: 1px solid black;
+            font-family: 'Comic Sans MS', sans-serif;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Usuarios</h1>
+
+    <div class="tabla-container">
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>NIT</th>
+            </tr>
+            {% for usuario in Usuarios %}
+            <tr>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.correo }}</td>
+                <td>{{ usuario.nit }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
